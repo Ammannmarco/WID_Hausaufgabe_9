@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 750,
+  "height": 500,
+  "description": "Streudiagramm von Autos: Horsepower vs. Acceleration",
+  "data": {
+    "url": "https://vega.github.io/vega-lite/data/cars.json",
+    "format": {"type": "json"}
+  },
+  "mark": "circle",
+  "encoding": {
+    "x": {
+      "field": "Horsepower",
+      "type": "quantitative",
+      "title": "Horsepower [PS]"
+    },
+    "y": {
+      "field": "Acceleration",
+      "type": "quantitative",
+      "title": "Acceleration [0-60 mph in seconds]"
+    },
+    "size": {
+      "field": "Weight_in_lbs",
+      "type": "quantitative",
+      "title": "Weight [lbs]"
+    },
+    "color": {
+      "field": "Origin",
+      "type": "nominal",
+      "title": "Origin",
+      "scale": {
+        "domain": ["USA", "Japan", "Europe"],
+        "range": ["#377eb8", "#ff7f00", "#4daf4a"]
+      }
+    },
+    "tooltip": [
+      {"field": "Name", "type": "nominal", "title": "Car Name"},
+      {"field": "Horsepower", "type": "quantitative", "title": "Horsepower (PS)"},
+      {"field": "Acceleration", "type": "quantitative", "title": "Acceleration (sec)"},
+      {"field": "Weight_in_lbs", "type": "quantitative", "title": "Weight (lbs)"},
+      {"field": "Origin", "type": "nominal", "title": "Origin"}
+    ]
+  }
+}

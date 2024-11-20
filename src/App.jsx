@@ -1,7 +1,15 @@
-import Typography from "@mui/material/Typography";
+import { CssBaseline, Container } from "@mui/material";
+import VegaChart from "./VegaChart";
 
 function App() {
-  return <Typography variant="h3"> Hello React + MUI </Typography>;
+  return (
+    <>
+      <CssBaseline />
+      <Container>
+        <VegaChart />
+      </Container>
+    </>
+  );
 }
 
 export default App;
